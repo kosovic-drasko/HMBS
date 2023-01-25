@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HMBS.iml" filepath="$PROJECT_DIR$/HMBS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hmbs.iml" filepath="$PROJECT_DIR$/hmbs.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="booking">
+      <h2 data-cy="bookingDetailsHeading"><span jhiTranslate="hmbsApp.booking.detail.title">Booking</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ booking.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hmbsApp.booking.hotelId">Hotel Id</span></dt>
+        <dd>
+          <span>{{ booking.hotelId }}</span>
+        </dd>
+        <dt><span jhiTranslate="hmbsApp.booking.roomId">Room Id</span></dt>
+        <dd>
+          <span>{{ booking.roomId }}</span>
+        </dd>
+        <dt><span jhiTranslate="hmbsApp.booking.userId">User Id</span></dt>
+        <dd>
+          <span>{{ booking.userId }}</span>
+        </dd>
+        <dt><span jhiTranslate="hmbsApp.booking.checkin">Checkin</span></dt>
+        <dd>
+          <span>{{ booking.checkin | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="hmbsApp.booking.checkout">Checkout</span></dt>
+        <dd>
+          <span>{{ booking.checkout | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="hmbsApp.booking.numOfGuests">Num Of Guests</span></dt>
+        <dd>
+          <span>{{ booking.numOfGuests }}</span>
+        </dd>
+        <dt><span jhiTranslate="hmbsApp.booking.finalPrice">Final Price</span></dt>
+        <dd>
+          <span>{{ booking.finalPrice }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/booking', booking.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

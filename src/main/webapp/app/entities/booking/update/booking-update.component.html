@@ -1,0 +1,107 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-booking-heading" data-cy="BookingCreateUpdateHeading" jhiTranslate="hmbsApp.booking.home.createOrEditLabel">
+        Create or edit a Booking
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hmbsApp.booking.hotelId" for="field_hotelId">Hotel Id</label>
+          <input type="number" class="form-control" name="hotelId" id="field_hotelId" data-cy="hotelId" formControlName="hotelId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hmbsApp.booking.roomId" for="field_roomId">Room Id</label>
+          <input type="number" class="form-control" name="roomId" id="field_roomId" data-cy="roomId" formControlName="roomId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hmbsApp.booking.userId" for="field_userId">User Id</label>
+          <input type="number" class="form-control" name="userId" id="field_userId" data-cy="userId" formControlName="userId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hmbsApp.booking.checkin" for="field_checkin">Checkin</label>
+          <div class="input-group">
+            <input
+              id="field_checkin"
+              data-cy="checkin"
+              type="text"
+              class="form-control"
+              name="checkin"
+              ngbDatepicker
+              #checkinDp="ngbDatepicker"
+              formControlName="checkin"
+            />
+            <button type="button" class="btn btn-secondary" (click)="checkinDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hmbsApp.booking.checkout" for="field_checkout">Checkout</label>
+          <div class="input-group">
+            <input
+              id="field_checkout"
+              data-cy="checkout"
+              type="text"
+              class="form-control"
+              name="checkout"
+              ngbDatepicker
+              #checkoutDp="ngbDatepicker"
+              formControlName="checkout"
+            />
+            <button type="button" class="btn btn-secondary" (click)="checkoutDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hmbsApp.booking.numOfGuests" for="field_numOfGuests">Num Of Guests</label>
+          <input
+            type="number"
+            class="form-control"
+            name="numOfGuests"
+            id="field_numOfGuests"
+            data-cy="numOfGuests"
+            formControlName="numOfGuests"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="hmbsApp.booking.finalPrice" for="field_finalPrice">Final Price</label>
+          <input
+            type="number"
+            class="form-control"
+            name="finalPrice"
+            id="field_finalPrice"
+            data-cy="finalPrice"
+            formControlName="finalPrice"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

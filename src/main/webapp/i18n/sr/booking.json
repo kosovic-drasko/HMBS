@@ -1,0 +1,30 @@
+{
+  "hmbsApp": {
+    "booking": {
+      "home": {
+        "title": "Bookings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi Booking",
+        "createOrEditLabel": "Kreirajte ili izmenite Booking",
+        "notFound": "No Bookings found"
+      },
+      "created": "Kreiran je novi Booking pod nazivom {{ param }}",
+      "updated": "Booking pod nazivom {{ param }} je ažuriran",
+      "deleted": "Booking pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Booking pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Booking"
+      },
+      "id": "ID",
+      "hotelId": "Hotel Id",
+      "roomId": "Room Id",
+      "userId": "User Id",
+      "checkin": "Checkin",
+      "checkout": "Checkout",
+      "numOfGuests": "Num Of Guests",
+      "finalPrice": "Final Price"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "changelogDate": "20230125181532",
+  "dto": "no",
+  "fields": [
+    {
+      "fieldName": "hotelId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "roomId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "checkin",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "checkout",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "numOfGuests",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "finalPrice",
+      "fieldType": "Double"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Booking",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
